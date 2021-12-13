@@ -12,8 +12,9 @@ public class SalaryService
 	{
 		this.employeeservice = employeeservice;
 	}
-	public void GetSalary(Employee employee)
+	public void SetNewSalary(Employee employee)
 	{
-		employee.setiMonthlySalary(employee.getiMonthlySalary()*(1+employeeservice.getRaisePercent(employee)/100));
+		int iMonthlySalary = (int)(employee.getiMonthlySalary()*(1+employeeservice.getRaisePercent(employee)/100.0));
+		employee.setiMonthlySalary(iMonthlySalary);
 	}
 }

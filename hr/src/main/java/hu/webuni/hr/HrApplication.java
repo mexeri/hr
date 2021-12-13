@@ -1,11 +1,14 @@
 package hu.webuni.hr;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import hu.webuni.hr.model.Employee;
 import hu.webuni.hr.service.SalaryService;
 
 //@ComponentScan("hu.webuni.hr")
@@ -21,7 +24,10 @@ public class HrApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
+		Employee e = new Employee(1L,"Faszszopo","anyad", 100,LocalDateTime.parse("2009-12-02T11:25:25"));
+		
+		salaryservice.SetNewSalary(e);
+		System.out.print(e.getiMonthlySalary());
 		
 	}
 
