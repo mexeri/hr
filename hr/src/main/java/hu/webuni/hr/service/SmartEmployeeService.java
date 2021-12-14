@@ -23,9 +23,9 @@ public class SmartEmployeeService implements EmployeeService
 		
 		Smart smartConfig = config.getSalary().getSmart();
 		
-		if(dYearsBetween>=config.getSalary().getSmart().getLimit3()) return config.getSalary().getSmart().getPercent3();
-		if(dYearsBetween>=config.getSalary().getSmart().getLimit2()) return config.getSalary().getSmart().getPercent2();
-		if(dYearsBetween>=config.getSalary().getSmart().getLimit1()) return config.getSalary().getSmart().getPercent1();
+		if(dYearsBetween>=smartConfig.getLimit3()) return smartConfig.getPercent3();
+		if(dYearsBetween>=smartConfig.getLimit2()) return smartConfig.getPercent2();
+		if(dYearsBetween>=smartConfig.getLimit1()) return smartConfig.getPercent1();
 		return 0;
 
 	}
